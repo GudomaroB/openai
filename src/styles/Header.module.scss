@@ -1,0 +1,138 @@
+@import "../styles/variables.module.scss";
+
+.header {
+  @include display-flex;
+  justify-content: space-between;
+  padding: 1.6rem;
+  margin-bottom: 6rem;
+  .header-logo img {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  nav {
+    ul {
+      @include display-flex;
+      column-gap: 3.9rem;
+      li {
+        a {
+          color: $color-header-text;
+          font-size: $fz-18;
+          font-weight: $font-w-500;
+          transition: all 0.1s ease-in-out;
+          padding: 1.5rem 1.5rem;
+          border-radius: 0.5rem;
+          &:hover {
+            background-color: $color-header-text;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    background-color: $color-header-text;
+    color: $color-white;
+    font-weight: $font-w-500;
+    text-transform: uppercase;
+    font-family: $family-Roboto-mono;
+    padding: 1.2rem 2.3rem;
+    border-radius: 2rem;
+    transition: all 0.1s ease-in-out;
+    border: 0.1rem solid $color-header-text;
+    &:hover {
+      background-color: $color-green;
+      color: $color-header-text;
+      font-weight: $font-w-700;
+      border-color: $color-green;
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+  .humburger {
+    display: none;
+    .btn-burger {
+      font-size: 4rem;
+      font-weight: $font-w-700;
+      color: $color-green;
+    }
+    .btn-burger-close {
+      font-size: 4rem;
+      font-weight: $font-w-700;
+      color: $color-header-text;
+    }
+  }
+}
+
+@media (width < 768px) {
+  .header nav ul li a {
+    &:hover {
+      background-color: transparent; // Убираем фоновый цвет при ховере
+      color: $color-header-text; // Сохраняем исходный цвет текста
+    }
+  }
+  .header .btn {
+    &:hover {
+      background-color: transparent;
+      color: $color-header-text;
+    }
+  }
+  .header-logo img {
+    &:hover {
+      transform: scale(1);
+    }
+  }
+}
+@media (width < 902px) {
+  .header {
+    margin-bottom: 1rem;
+    padding: 2rem 0;
+    .header-logo {
+      position: relative;
+      z-index: 1;
+    }
+    .btn {
+      display: none;
+    }
+    nav {
+      position: fixed;
+      top: 0rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $color-green;
+      background-color: #fff;
+      padding: 8rem 2rem 2rem;
+      height: 100vh;
+      width: 100%;
+      transform: translateX(-120%);
+      transition: all 0.5s ease;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li {
+          padding: 1.5rem;
+          a {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+    .nav {
+      transform: translateX(0);
+      transition: all 0.5s ease;
+    }
+    .humburger {
+      position: relative;
+      z-index: 1;
+      display: block;
+    }
+  }
+}

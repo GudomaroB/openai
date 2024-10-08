@@ -1,0 +1,58 @@
+@import "./variables.module.scss";
+@import url("../assets/fonts/lt.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  @include resetPaddingAndMarginSize;
+}
+html {
+  font-size: $fz1RemOr10px;
+}
+
+body {
+  font-family: $family-lt;
+  font-weight: $font-w-450;
+  font-size: $fz-18;
+  color: $color-header-text;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  @include btn;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 129.6rem;
+  margin: 0 auto;
+}
+
+::selection {
+  background-color: $color-green; /* Цвет фона выделения */
+  color: $color-header-text; /* Цвет текста выделения (опционально) */
+}
+
+/* Для старых браузеров, которые поддерживают -webkit- */
+::-moz-selection {
+  background-color: $color-green; /* Цвет фона выделения */
+  color: $color-header-text; /* Цвет текста выделения (опционально) */
+}
+
+::-webkit-selection {
+  background-color: $color-green; /* Цвет фона выделения */
+  color: $color-header-text; /* Цвет текста выделения (опционально) */
+}
+
+@media (width < 902px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}

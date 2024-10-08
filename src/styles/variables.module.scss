@@ -1,0 +1,47 @@
+// шрифты
+$family-lt: "LT Superior";
+$family-gilroy: "Gilroy";
+$family-Roboto-mono: "Roboto Mono", monospace;
+
+// цвета
+$color-header-text: #0e0c0f;
+$color-white: #fff;
+$color-green: #12f287;
+$color-rad: #ff0000;
+
+// размер шрифта
+$fz1RemOr10px: 62.5%;
+$fz-18: 1.8rem;
+$fz-30: 3rem;
+
+//начертание шрифта
+$font-w-400: 400;
+$font-w-450: 450;
+$font-w-500: 400;
+$font-w-600: 600;
+$font-w-700: 700;
+
+// отступы
+
+$mb-32px: 3.2rem;
+
+// флексы
+@mixin display-flex {
+  display: flex;
+  align-items: center;
+}
+
+//кнопка button
+@mixin btn {
+  display: block;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+//обнуление стилей
+@mixin resetPaddingAndMarginSize {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

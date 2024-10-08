@@ -1,0 +1,77 @@
+@import "./variables.module.scss";
+
+.port {
+  background-color: $color-header-text;
+  padding: 1.5rem 4.2rem;
+  display: flex;
+  justify-content: center;
+  color: $color-white;
+  margin-bottom: 3rrem;
+  border-radius: 3rem;
+  margin-bottom: 3.2rem;
+  .card {
+    &__block {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: 1rem;
+      p {
+        font-size: 4.8rem;
+        color: $color-green;
+        font-family: $family-gilroy;
+        font-weight: $font-w-500;
+      }
+
+      h3 {
+        color: $color-white;
+        font-size: 1.8rem;
+        line-height: 2rem;
+        font-weight: $font-w-450;
+        max-width: 25.2rem;
+      }
+    }
+    &__icon {
+      font-size: 4.2rem;
+      color: $color-white;
+      display: none;
+    }
+  }
+}
+
+@media (width < 902px) {
+  .port {
+    padding: 1rem 2rem;
+    display: block;
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 1rem;
+      &__icon {
+        display: block;
+      }
+    }
+  }
+}
+@media (width < 767px) {
+  .port {
+    background-color: transparent;
+    padding: 0;
+    .card {
+      column-gap: 1.5rem;
+      background-color: $color-header-text;
+      margin-bottom: 1.5rem;
+      padding: 3rem 3.2rem;
+      border-radius: 2rem;
+      &__block {
+        p {
+          font-size: 3.2rem;
+        }
+        h3 {
+          width: 100%;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
